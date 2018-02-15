@@ -1,18 +1,6 @@
 // solve.js
-var solver = require('./sudoku_solver');
-var board = "";
+var solver = require('./sudoku_solver')
+var board =
+  '010008769000073028702600300007390000406000503000062400008001902570920000239800010'
 
-process.stdin.setEncoding('utf8');
-
-process.stdin.on('readable', () => {
-  var chunk = process.stdin.read();
-
-  if (chunk !== null) {
-    board += chunk.replace(/,/g, "").replace(/-/g, "0")
-  }
-});
-
-process.stdin.on('end', () => {
-  var solution = solver.solveSudoku(board);
-});
-
+var solution = solver.solveSudoku(board)
